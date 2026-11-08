@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ArrowUpRight, Pause, Play } from 'lucide-react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { useScrollMotion } from "@/hooks/use-scroll-motion";
 import { SiteHeader } from '@/components/site-header';
 import { ContactSection } from '@/components/contact-section';
 import { services, serviceHref } from '@/lib/services';
@@ -174,33 +175,7 @@ export default function BarLanding() {
   const [selectedFormat, setSelectedFormat] = useState(0);
   const [drinkware, setDrinkware] = useState<'glass' | 'disposable'>('glass');
 
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (media.matches || !('IntersectionObserver' in window)) return;
-    const nodes = Array.from(root.current?.querySelectorAll<HTMLElement>('[data-reveal]') ?? []);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          (entry.target as HTMLElement).dataset.visible = 'true';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    nodes.forEach(node => {
-      if (node.getBoundingClientRect().top >= window.innerHeight) {
-        node.dataset.visible = 'false';
-        observer.observe(node);
-      }
-    });
-    const showAll = () => {
-      if (media.matches) {
-        nodes.forEach(node => { node.dataset.visible = 'true'; });
-        observer.disconnect();
-      }
-    };
-    media.addEventListener('change', showAll);
-    return () => { observer.disconnect(); media.removeEventListener('change', showAll); };
-  }, []);
+  useScrollMotion(root);
 
   useEffect(() => {
     const container = root.current;
