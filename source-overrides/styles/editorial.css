@@ -5,7 +5,13 @@
 .bar-site p{text-wrap:pretty}
 .bar-site .section h2,.bar-site .hero h1,.bar-site .product-intro h1{font-family:var(--display);font-weight:300;letter-spacing:-.055em;line-height:1.04}
 .bar-site .section h2{font-size:clamp(48px,6.6vw,100px)}
-.hero{position:relative;background:var(--paper);color:var(--ink);padding-bottom:28px}
+.hero{position:relative;background:#191a17;color:#f4f3ef;padding-bottom:28px;--orange-ink:#ff6043}
+.hero .header{border-bottom-color:#f4f3ef30}
+.hero .monogram{color:#f4f3ef}
+.hero .header-logo{border-radius:0}
+.hero .header-cta,.hero .menu-toggle{color:#f4f3ef;border-color:#f4f3ef80}
+.hero .action-button:hover{color:#f4f3ef;border-color:#f4f3ef}
+.hero .hero-bottom p,.hero .hero-caption{color:#d2d0c7}
 .announcement{background:var(--ink);color:var(--paper);text-align:center;padding:9px 20px;font-size:10px;line-height:1.5;letter-spacing:.13em;text-transform:uppercase}
 .header{min-height:102px;border-bottom:1px solid #191a173b;position:relative;z-index:4;padding-block:24px}
 .monogram{color:var(--ink);font-size:27px}
