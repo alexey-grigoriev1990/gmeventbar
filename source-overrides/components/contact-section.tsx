@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { BrandLogo } from '@/components/brand-logo';
 const phone = '+79196564524';
 
 
@@ -38,8 +39,10 @@ export function ContactSection({rootHref = './', topHref = '#home', message = '�
             </div>
           </div>
         </div>
-        <div className="footer-bottom">
-          <a href={`${rootHref}#home`} className="brand" aria-label="GM.EVENT — на главную">GM.EVENT</a>
+      </div>
+      <div className="footer-brand-band">
+        <div className="footer-bottom wrap">
+          <BrandLogo rootHref={rootHref} className="footer-logo"/>
           <p>Выездной бар<br/>Чебоксары</p>
           <a href={topHref}>Наверх</a>
           <span>© 2026</span>

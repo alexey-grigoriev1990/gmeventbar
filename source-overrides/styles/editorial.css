@@ -17,6 +17,28 @@
 .monogram{color:var(--ink);font-size:27px}
 .header-logo{display:block;line-height:0;border-radius:12px;overflow:hidden}
 .header-logo .brand-image{display:block;width:144px;height:144px;object-fit:contain}
+.brand-logo{display:block;line-height:0;flex-shrink:0}
+.brand-logo .brand-image{display:block;object-fit:contain}
+.site-header-band{background:#191a17;color:#f4f3ef}
+.site-header-band .header{border-bottom-color:#f4f3ef30}
+.bar-site .site-header-band .header-cta,.site-header-band .menu-toggle{color:#ff6043;border-color:currentColor}
+.bar-site .site-header-band .header-cta:hover{color:#f4f3ef;background:transparent}
+.bar-site dialog.site-menu{background:#191a17;color:#f4f3ef}
+.bar-site dialog.site-menu::backdrop{background:#191a17}
+.site-menu .menu-top{border-bottom-color:#f4f3ef30}
+.site-menu .menu-close,.site-menu .menu-products>.eyebrow{color:#ff6043}
+.site-menu .menu-secondary{border-top-color:#f4f3ef30}
+.site-menu .menu-products>a:hover .menu-product-name,.site-menu .menu-products>a[aria-current=page] .menu-product-name{color:#ff6043}
+.bar-site .footer-brand-band{background:#191a17;color:#f4f3ef;padding-block:22px}
+.bar-site .footer-brand-band .footer-bottom{margin-top:0;padding-block:0;border:0;align-items:center}
+.footer-logo .brand-image{width:112px;height:112px}
+.footer-brand-band .footer-bottom>.brand-logo{justify-self:start}
+.bar-site .footer-brand-band a:focus-visible{outline-color:#ff6043}
+@media(max-width:640px){
+ .site-menu .menu-top>.header-logo{grid-column:1;justify-self:start}
+ .site-menu .menu-top>.menu-close{grid-column:3}
+ .footer-logo .brand-image{width:96px;height:96px}
+}
 @media(max-width:640px){.header-logo .brand-image{width:104px;height:104px}}
 .bar-site .action-button,.bar-site .header-cta,.bar-site .product-page .header-cta{background:transparent;color:var(--orange-ink);border:1px solid currentColor;border-radius:4px;box-shadow:none;font-weight:400;min-height:48px;padding:12px 20px;gap:24px;transition:transform 120ms ease-out,background-color 160ms ease-out,color 160ms ease-out,border-color 160ms ease-out}
 .bar-site .action-button:hover{background:transparent;color:var(--ink);border-color:currentColor;transform:translateY(-2px)}

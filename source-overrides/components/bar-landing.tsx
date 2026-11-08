@@ -224,7 +224,7 @@ export default function BarLanding() {
 
     <section className="hero" id="home" aria-labelledby="hero-title">
       <div className="announcement">Выездной бар · Чебоксары</div>
-      <SiteHeader showLogo/>
+      <SiteHeader/>
 
       <div className="hero-layout wrap">
         <div className="hero-intro" data-depth="-34">
