@@ -172,7 +172,8 @@ function HeroFilm() {
 
 export default function BarLanding() {
   const root = useRef<HTMLElement>(null);
-  const [selectedFormat, setSelectedFormat] = useState(0);
+  const [selectedFormat, setSelectedFormat] = useState<number | null>(0);
+  const [previewFormat, setPreviewFormat] = useState(0);
   const [drinkware, setDrinkware] = useState<'glass' | 'disposable'>('glass');
 
   useScrollMotion(root);
@@ -216,7 +217,7 @@ export default function BarLanding() {
     root.current?.querySelectorAll('#cocktail-gallery img, .format-preview img').forEach(node => {
       node.animate([{ opacity: .35, transform: 'scale(1.025)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 320, easing: 'cubic-bezier(.2,.7,.2,1)' });
     });
-  }, [drinkware, selectedFormat]);
+  }, [drinkware, previewFormat]);
 
   return <main ref={root} className="bar-site">
     <a className="skip-link" href="#presentation">К содержанию</a>
@@ -285,16 +286,16 @@ export default function BarLanding() {
       </div>
       <div className="format-studio">
         <figure className="format-preview">
-          <Image unoptimized key={services[selectedFormat].id} src={services[selectedFormat].image} alt={services[selectedFormat].imageAlt} width={1122} height={1402} loading="lazy"/>
-          <figcaption><span>Коктейльный бар</span><span>{services[selectedFormat].title}</span></figcaption>
+          <Image unoptimized key={services[previewFormat].id} src={services[previewFormat].image} alt={services[previewFormat].imageAlt} width={1122} height={1402} loading="lazy"/>
+          <figcaption><span>Коктейльный бар</span><span>{services[previewFormat].title}</span></figcaption>
         </figure>
         <div className="tariff-list" aria-label="Тарифы коктейльного бара">
           {services.slice(0,4).map((service,index) => <article data-reveal className={`tariff${selectedFormat === index ? ' is-selected' : ''}`} key={service.id}>
-            <h3><button type="button" id={`tariff-${service.id}`} aria-expanded={selectedFormat === index} aria-controls={`panel-${service.id}`} onClick={() => setSelectedFormat(index)}>
+            <h3><button type="button" id={`tariff-${service.id}`} aria-expanded={selectedFormat === index} aria-controls={`panel-${service.id}`} onClick={() => { setPreviewFormat(index); setSelectedFormat(current => current === index ? null : index); }}>
               <span>{service.title}</span><span className="tariff-symbol" aria-hidden="true">{selectedFormat === index ? '−' : '+'}</span>
             </button></h3>
             <p className="tariff-short">{service.short}</p>
-            {service.pricing && <p className="tariff-rate">от {formatRubles(service.pricing.packages[0].price)} <span>· {formatRubles(service.pricing.perDrink)} за напиток</span></p>}
+            {service.pricing && <p className="tariff-rate">{formatRubles(service.pricing.perDrink)} <span>за напиток</span></p>}
             <div className="tariff-panel" id={`panel-${service.id}`} role="region" aria-labelledby={`tariff-${service.id}`} hidden={selectedFormat !== index}>
               <p>{service.description}</p>
               <dl className="tariff-facts">{service.offer.map(item => <div key={item.title}><dt>{item.title}</dt><dd>{item.text}</dd></div>)}</dl>
