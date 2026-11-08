@@ -1,5 +1,8 @@
 {
   "files": [
+    "Literata-OFL.txt",
+    "Oswald-OFL.txt",
+    "OswaldRegular-OFL.txt",
     "alcohol-free-bar/index.html",
     "asset-GM_EVENT_logo-16ac355487.svg",
     "asset-coupe-v1-a9d5fb5de2.jpg",
@@ -12,7 +15,7 @@
     "asset-team-portraits-alex-tone-v4-8f4a0aaccf.jpg",
     "asset-team-portraits-diptych-v3-ca0f97ed26.jpg",
     "bar-app-09b673186d86.js",
-    "bar-style-676f16f06212.css",
+    "bar-style-79e3a69de219.css",
     "bartender/index.html",
     "basic/index.html",
     "beer-bar/index.html",
@@ -20,6 +23,9 @@
     "cocktail-casino/index.html",
     "comfort/index.html",
     "express/index.html",
+    "font-literata.woff2",
+    "font-oswald.woff2",
+    "font-oswaldregular.woff2",
     "hero-bar-desktop-v6.mp4",
     "hero-bar-mobile-v6.mp4",
     "hero-bar-motion-mobile-v6.webp",

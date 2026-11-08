@@ -33,7 +33,11 @@ await esbuild.build({...options,entryPoints:['demo-src/render.tsx'],platform:'no
 const {render,pages,redirects}=await import(pathToFileURL(resolve(out,'render.mjs')).href);
 const stylesheet=resolve(root,'app/globals.css');
 const compiled=await postcss([tailwindcss()]).process(readFileSync(stylesheet,'utf8'),{from:stylesheet,map:false});
-const css=compiled.css+'\n'+readFileSync(resolve(root,'demo-src/fonts.css'),'utf8')+'\n'+readFileSync(resolve(root,'demo-src/hero-font.css'),'utf8');
+const css=compiled.css+'\n'+readFileSync(resolve(root,'demo-src/fonts.css'),'utf8')+'\n'+readFileSync(resolve(root,'demo-src/hero-font.css'),'utf8')+'\n'+readFileSync(resolve(root,'demo-src/type-fonts.css'),'utf8');
+for(const family of ['Oswald','OswaldRegular','Literata']) {
+ copyFileSync(resolve(root,'public/fonts',family+'.woff2'),resolve(out,'font-'+family.toLowerCase()+'.woff2')); files.add('font-'+family.toLowerCase()+'.woff2');
+ copyFileSync(resolve(root,'public/fonts',family+'-OFL.txt'),resolve(out,family+'-OFL.txt')); files.add(family+'-OFL.txt');
+}
 const stylesheetSrc=publishAsset('bar-style-'+createHash('sha256').update(css).digest('hex').slice(0,12)+'.css',css);
 const icon=readFileSync(resolve(root,'public/favicon.svg')).toString('base64');
 const js=client.outputFiles[0].text;

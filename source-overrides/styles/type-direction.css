@@ -1,0 +1,55 @@
+/* Reference lock: bar poster headings + readable restaurant-menu prose.
+   Oswald 600 owns display; Literata 400 owns prose. No decorative word swaps. */
+.bar-site{--display:Oswald,'Arial Narrow',sans-serif;--font-body:Literata,Georgia,serif;font-family:var(--font-body);letter-spacing:0;line-height:1.7}
+.bar-site .section h2,.bar-site .hero h1,.bar-site .product-intro h1,.bar-site .contact .contact-title h2{font-family:var(--display);font-weight:600;letter-spacing:.005em;line-height:1.08;text-transform:uppercase}
+.bar-site .hero h1{font-size:clamp(46px,6vw,88px);line-height:1.13}
+.bar-site .hero-line-script,.bar-site .section-script{font-family:inherit;font-weight:inherit;font-style:normal;letter-spacing:inherit;line-height:inherit}
+.bar-site .hero-line,.bar-site .hero-line:first-child{text-transform:uppercase;letter-spacing:inherit;white-space:nowrap}
+.bar-site .section h2{font-size:clamp(44px,5.2vw,76px)}
+.bar-site .formats-heading h2,.bar-site .team-heading h2,.bar-site .how h2{font-size:clamp(42px,4.6vw,66px)}
+.bar-site .contact .contact-title h2{font-size:clamp(42px,4.7vw,68px)}
+.bar-site .tariff h3 button>span:first-child,.bar-site .additional-heading h3,.bar-site .additional-services .service-link-copy h3,.bar-site .founder-title h3,.bar-site .product-offer h3,.bar-site .other-formats a{font-family:var(--display);font-weight:500;letter-spacing:.01em;text-transform:uppercase;line-height:1.15}
+.bar-site .tariff h3 button>span:first-child{font-size:clamp(32px,3.1vw,46px)}
+.bar-site .additional-services .service-link-copy h3{font-size:clamp(27px,2.5vw,36px)}
+.bar-site .founder-title h3{font-size:clamp(25px,2.3vw,34px)}
+.bar-site .product-accent{font-family:var(--font-body);font-size:clamp(22px,2.2vw,30px);font-weight:400;letter-spacing:0;line-height:1.45}
+.bar-site .product-intro h1{font-size:clamp(46px,5vw,76px)}
+.bar-site .product-offer h3{font-size:27px}
+.bar-site .action-button,.bar-site button,.bar-site .editorial-link,.bar-site .eyebrow,.bar-site .announcement,.bar-site .hero-caption,.bar-site .tariff-rate,.bar-site .package-start strong,.bar-site .phone-link,.bar-site .package-table,.bar-site .product-breadcrumbs,.bar-site .format-preview figcaption,.bar-site .footer-bottom,.bar-site .founder-title>span,.bar-site .tariff-facts dt,.bar-site .tariff-bottom,.bar-site .copy-status,.bar-site .menu-secondary{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:400;letter-spacing:.025em}
+.bar-site .menu-product-name{font-family:var(--display);font-weight:500!important;letter-spacing:.02em;text-transform:uppercase}
+.bar-site .action-button{font-size:14px}
+.bar-site .announcement,.bar-site .eyebrow{font-size:11px;letter-spacing:.09em}
+.bar-site .hero-bottom p{font-size:18px;line-height:1.65}
+.bar-site .tariff-short{font-size:14px;line-height:1.65}
+.bar-site .tariff-panel>p,.bar-site .tariff-facts dd{font-size:15px;line-height:1.75}
+.bar-site .additional-services .service-link-copy p,.bar-site .founder>p,.bar-site .product-offer p,.bar-site .steps p,.bar-site .faq-content{font-size:15px;line-height:1.75}
+.bar-site .tariff-rate{font-size:22px}
+.bar-site .tariff-rate span{font-size:14px}
+.bar-site .package-table{font-size:16px}
+.bar-site .package-table thead th{font-size:13px}
+.bar-site .package-start strong{font-size:32px;letter-spacing:.01em}
+.bar-site .phone-contact .phone-link{font-size:clamp(23px,2.2vw,32px);font-weight:400;letter-spacing:.01em}
+.bar-site .hero-bottom .action-button{font-size:14px}
+.bar-site .brand,.bar-site .monogram:not(.header-logo){font-family:var(--font-logo),Arial,sans-serif}
+@media(min-width:641px) and (max-width:900px){.bar-site .hero h1{font-size:clamp(32px,5.6vw,50px)}}
+@media(max-width:640px){
+ .bar-site .hero h1{font-size:clamp(46px,11.7vw,70px);line-height:1.15}
+ .bar-site .section h2,.bar-site .formats-heading h2,.bar-site .team-heading h2,.bar-site .how h2,.bar-site .contact .contact-title h2{font-size:clamp(36px,9vw,52px)}
+ .bar-site .hero-bottom p{font-size:14px;max-width:220px}
+ .bar-site .hero-bottom .action-button{font-size:12px}
+ .bar-site .hero-bottom>div{width:100%}
+ .bar-site .hero-bottom .action-button{margin-top:18px}
+ .bar-site .additional-heading h3{font-size:34px}
+ .bar-site .tariff h3 button>span:first-child{font-size:34px}
+ .bar-site .founder-title h3{font-size:27px}
+ .bar-site .additional-services .service-link-copy h3{font-size:29px}
+ .bar-site .product-intro h1{font-size:clamp(40px,11vw,60px)}
+ .bar-site .product-intro-long h1{font-size:clamp(30px,8.2vw,48px)}
+ .bar-site .product-accent{font-size:23px;line-height:1.4}
+ .bar-site .product-page>.wrap .section h2{font-size:34px}
+ .bar-site .package-table{font-size:14px}
+ .bar-site .package-table thead th{font-size:12px}
+ .bar-site .phone-contact .phone-link{font-size:clamp(18px,4.9vw,26px);letter-spacing:0}
+ .bar-site .announcement{font-size:10px}
+ .bar-site .hero-caption{font-size:10px}
+}
