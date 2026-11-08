@@ -19,7 +19,7 @@ const target='asset-'+name.slice(0,dot)+'-'+createHash('sha256').update(bytes).d
 return publishAsset(target,bytes);
 }
 const localAssets={name:'local-demo-assets',setup(build){
-build.onLoad({filter:/(?:bar-landing|product-page)\.tsx$|services\.ts$/},({path})=>{
+build.onLoad({filter:/(?:bar-landing|product-page|site-header)\.tsx$|services\.ts$/},({path})=>{
 let source=readFileSync(path,'utf8').replace("import Image from 'next/image';",'').replaceAll('<Image unoptimized','<img');
 source=source.replace(/'\/grigoryev-malygin-bar\/videos\/([^']+)'/g,(_,name)=>{
 copyFileSync(resolve(root,'public/videos',name),resolve(out,name));files.add(name);return "'./"+name+"'";
