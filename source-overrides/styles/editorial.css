@@ -71,6 +71,32 @@
 .tariff h3 button[aria-expanded=true]{color:var(--orange-ink)}
 .tariff-symbol{font-weight:300;font-size:26px;line-height:1}
 .tariff-short{font-size:13px;line-height:1.6;color:#505249;margin-top:9px;max-width:85%}
+.tariff-rate{margin-top:12px;font-size:19px;font-variant-numeric:tabular-nums;line-height:1.5}
+.tariff-rate span{font-size:12px;color:#505249;white-space:nowrap}
+.tariff-facts{margin:22px 0 0}
+.tariff-facts>div{margin-top:16px}
+.tariff-facts dt{font-size:11px;letter-spacing:.04em;color:var(--orange-ink);margin-bottom:5px}
+.tariff-facts dd{font-size:14px;line-height:1.7;color:#505249;margin:0}
+.tariff-minimum{font-size:12px;line-height:1.7;margin:20px 0;color:#505249}
+.package-start{margin-top:24px}
+.package-start strong{font-family:var(--display);font-size:36px;font-weight:400;letter-spacing:-.03em}
+.package-start p,.package-cost-note{font-size:14px;line-height:1.7;color:#505249;margin-top:10px}
+.package-start .action-button{margin-top:18px;font-size:13px}
+.package-table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;text-align:left}
+.package-table caption{text-align:left;font-size:13px;color:#505249;margin-bottom:16px}
+.package-table th,.package-table td{border-bottom:1px solid #b9b09f;padding:17px 12px 17px 0;vertical-align:top}
+.package-table thead th{font-size:11px;font-weight:400;color:#505249}
+.package-table tbody th{font-weight:400;max-width:240px}
+.package-table td:last-child,.package-table th:last-child{text-align:right;padding-right:0;white-space:nowrap}
+.package-table td:nth-child(2){white-space:nowrap}
+.package-extra{margin-top:24px;font-size:14px;line-height:1.75;color:#505249}
+.package-cta{margin-top:24px}
+@media(max-width:640px){
+ .tariff-rate{font-size:18px}.tariff-rate span{font-size:11px}
+ .package-table{font-size:12px}.package-table th,.package-table td{padding-block:14px;padding-right:8px}
+ .package-table thead th{font-size:10px}.package-table tbody th{max-width:175px}
+ .package-start strong{font-size:32px}
+}
 .tariff-panel{padding-top:20px;animation:panel-in 280ms var(--ease)}
 .tariff-panel[hidden]{display:none}
 .tariff-panel>p{font-size:15px;line-height:1.7;color:#505249;max-width:55ch}

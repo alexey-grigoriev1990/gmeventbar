@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { useScrollMotion } from "@/hooks/use-scroll-motion";
 import { SiteHeader } from '@/components/site-header';
 import { ContactSection } from '@/components/contact-section';
-import { services, serviceHref } from '@/lib/services';
+import { services, serviceHref, formatRubles } from '@/lib/services';
 
 const faqs = [
   { id: 'cost', question: 'Как рассчитывается стоимость?', answer: 'Учитываем меню, число гостей, время работы и площадку. После разговора подготовим предложение с составом услуг и стоимостью.' },
@@ -294,10 +294,12 @@ export default function BarLanding() {
               <span>{service.title}</span><span className="tariff-symbol" aria-hidden="true">{selectedFormat === index ? '−' : '+'}</span>
             </button></h3>
             <p className="tariff-short">{service.short}</p>
+            {service.pricing && <p className="tariff-rate">от {formatRubles(service.pricing.packages[0].price)} <span>· {formatRubles(service.pricing.perDrink)} за напиток</span></p>}
             <div className="tariff-panel" id={`panel-${service.id}`} role="region" aria-labelledby={`tariff-${service.id}`} hidden={selectedFormat !== index}>
               <p>{service.description}</p>
-              <ul>{service.offer.map(item => <li key={item.title}>{item.title}</li>)}</ul>
-              <div className="tariff-bottom"><span>Индивидуальный расчёт</span><a href={serviceHref(service)} className="editorial-link">Подробнее ↗</a></div>
+              <dl className="tariff-facts">{service.offer.map(item => <div key={item.title}><dt>{item.title}</dt><dd>{item.text}</dd></div>)}</dl>
+              {service.pricing && <p className="tariff-minimum">Стартовый пакет: {service.pricing.minimum} напитков / {service.pricing.packages[0].hours} часа. {service.pricing.separateCosts}</p>}
+              <div className="tariff-bottom"><a href="#contact" className="editorial-link">{service.pricing?.cta ?? 'Получить расчёт'}</a><a href={serviceHref(service)} className="editorial-link">Все пакеты ↗</a></div>
             </div>
           </article>)}
         </div>

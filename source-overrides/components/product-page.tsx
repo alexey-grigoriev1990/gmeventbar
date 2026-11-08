@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { SiteHeader } from '@/components/site-header';
 import { ContactSection } from '@/components/contact-section';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
-import { services, serviceHref, type Service } from '@/lib/services';
+import { services, serviceHref, formatRubles, type Service } from '@/lib/services';
 
 const productImage = (src: string) => src.startsWith('./') ? `../${src.slice(2)}` : src;
 
@@ -26,6 +26,7 @@ export function ProductPage({ service }: { service: Service }) {
           <h1 id="product-title">{service.titleLines.map((line, index) => <span key={line}>{index > 0 ? ' ' : ''}{line}</span>)}</h1>
           <p className="product-accent">{service.accent}</p>
           <p className="product-description">{service.description}</p>
+          {service.pricing && <div className="package-start"><strong>от {formatRubles(service.pricing.packages[0].price)}</strong><p>{service.pricing.minimum} напитков · {service.pricing.packages[0].hours} часа · {formatRubles(service.pricing.perDrink)} за напиток</p><a className="action-button" href={`${pageHref}#contact`}>{service.pricing.cta}</a></div>}
           <a href={`${pageHref}#product-details`} className="product-detail-link">Что входит в формат</a>
         </div>
       </section>
@@ -44,6 +45,10 @@ export function ProductPage({ service }: { service: Service }) {
         </figure>)}</div>}
       </section>
       <section className="product-cost section" aria-labelledby="product-cost-title">
+        {service.pricing ? <>
+          <div><p className="eyebrow">ПАКЕТНЫЕ ПРЕДЛОЖЕНИЯ</p><h2 id="product-cost-title">Пакеты<br/>и стоимость</h2><p className="package-cost-note">{formatRubles(service.pricing.perDrink)} за напиток. Минимум заказа: {service.pricing.minimum} напитков.</p></div>
+          <div><table className="package-table"><caption>Пакеты «{service.title}»</caption><thead><tr><th scope="col">Объём и гости</th><th scope="col">Время</th><th scope="col">Стоимость</th></tr></thead><tbody>{service.pricing.packages.map(item => <tr key={item.label}><th scope="row">{item.label}</th><td>{item.hours} ч</td><td>{formatRubles(item.price)}</td></tr>)}</tbody></table><p className="package-extra">{service.pricing.separateCosts}</p><a className="action-button package-cta" href={`${pageHref}#contact`}>{service.pricing.cta}</a></div>
+        </> : <>
         <div><p className="eyebrow">УСЛОВИЯ</p><h2 id="product-cost-title">Сначала детали,<br/>затем расчёт</h2></div>
         <div><p>Стоимость зависит от меню, числа гостей, времени работы и площадки. После разговора подготовим предложение с составом услуги и итоговой суммой.</p>
           <dl className="product-brief"><div><dt>Когда и где</dt><dd>Дата, площадка и время работы</dd></div><div><dt>Для кого</dt><dd>Число гостей и их предпочтения</dd></div><div><dt>Как подать</dt><dd>Меню, посуда и оформление</dd></div></dl>
@@ -52,6 +57,7 @@ export function ProductPage({ service }: { service: Service }) {
             <AccordionContent className="faq-content">{item.answer}</AccordionContent>
           </AccordionItem>)}</Accordion>}
         </div>
+        </>}
       </section>
       <nav className="other-formats" aria-label="Другие форматы"><p className="eyebrow">ДРУГИЕ ФОРМАТЫ</p><div>{services.filter(item => item.id !== service.id).map(item => <a key={item.id} href={serviceHref(item, '../')}>{item.title}</a>)}</div></nav>
     </div>
