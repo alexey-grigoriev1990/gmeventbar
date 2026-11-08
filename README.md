@@ -1,6 +1,6 @@
 # Григорьев & Малыгин — демоверсия сайта
 
-[Открыть сайт](https://ilyasemenovya.github.io/grigoryev-malygin-bar/)
+[Открыть сайт](https://alexey-grigoriev1990.github.io/gmeventbar/)
 
 Первый вариант сайта выездного бара в Чебоксарах для обсуждения с командой. Название рабочее.
 
