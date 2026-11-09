@@ -319,7 +319,7 @@ export default function BarLanding() {
           <p className="eyebrow"><span className="section-number">03</span> КОМАНДА</p>
         </div>
         <div className="team-heading" data-reveal>
-          <h2 id="team-title">За баром.<br/>И за каждой деталью.</h2>
+          <h2 id="team-title">За баром<br/>И за каждой деталью</h2>
           <p>Мы Алексей и Роман, команда нашего проекта.<br/>У каждого больше десяти лет в барной индустрии.</p>
         </div>
         <div className="founders-grid">
