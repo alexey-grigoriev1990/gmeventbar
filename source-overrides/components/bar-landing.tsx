@@ -244,12 +244,12 @@ export default function BarLanding() {
 
     <section className="presentation wrap section" id="presentation" aria-labelledby="presentation-title">
       <div className="section-top">
-        <p className="eyebrow dark-label"><span className="section-number">01</span> МЕНЮ И ПОДАЧА</p>
+        <p className="eyebrow dark-label"><span className="section-number">01</span> КОКТЕЙЛЬНАЯ КАРТА</p>
       </div>
       <div className="gallery-heading" data-reveal>
-        <h2 id="presentation-title" className="paired-heading" aria-label="Коктейли и подача"><span className="heading-line">Коктейли</span><span className="section-script">и подача</span></h2>
+        <h2 id="presentation-title" className="paired-heading" aria-label="Наши напитки"><span className="heading-line">Наши</span><span className="section-script">напитки</span></h2>
         <div className="gallery-intro">
-          <p>Начинаем с ваших любимых напитков. Подбираем сочетания, посуду и подачу под формат события.</p>
+          <p>Расскажите, что любите вы и ваши гости. Вместе выберем напитки и решим, в каких бокалах их подать.</p>
           <a className="action-button outline-button" href="#formats">Выбрать формат</a>
         </div>
       </div>
@@ -281,8 +281,8 @@ export default function BarLanding() {
         <p className="eyebrow dark-label"><span className="section-number">02</span> ФОРМАТЫ</p>
       </div>
       <div className="formats-heading" data-reveal>
-        <h2 id="formats-title">У каждого события<br/>свой характер.</h2>
-        <p>Четыре варианта коктейльного бара и пять отдельных направлений — от инфьюзов до мастер-классов. Начнём с того, что подходит вашему событию.</p>
+        <h2 id="formats-title">У каждого события<br/>свой характер</h2>
+        <p>Для свадьбы, встречи с друзьями или большого праздника нужен разный бар. У нас четыре коктейльных пакета и ещё пять форматов — поможем выбрать ваш.</p>
       </div>
       <div className="format-studio">
         <figure className="format-preview">
@@ -305,7 +305,7 @@ export default function BarLanding() {
           </article>)}
         </div>
       </div>
-      <div className="additional-heading"><h3>Ещё больше способов<br/>собрать гостей.</h3><p>Отдельные направления для вашего события</p></div>
+      <div className="additional-heading"><h3>Ещё больше способов<br/>собрать гостей</h3><p>Мастер-классы, инфьюзы и другие форматы</p></div>
       <nav className="service-links additional-services" aria-label="Дополнительные форматы">
         {services.slice(4).map(service => <a key={service.id} className="service-page-link" data-reveal href={serviceHref(service)}>
           <div className="service-link-copy"><h3>{service.title}</h3><p>{service.description}</p></div><span className="service-link-label">Подробнее ↗</span>
@@ -320,7 +320,7 @@ export default function BarLanding() {
         </div>
         <div className="team-heading" data-reveal>
           <h2 id="team-title">За баром.<br/>И за каждой деталью.</h2>
-          <p>Алексей и Роман — партнёры проекта.<br/>У каждого больше десяти лет в барной индустрии.</p>
+          <p>Мы Алексей и Роман, команда нашего проекта.<br/>У каждого больше десяти лет в барной индустрии.</p>
         </div>
         <div className="founders-grid">
           <article className="founder" data-reveal>
@@ -328,14 +328,14 @@ export default function BarLanding() {
               <Image unoptimized src="/grigoryev-malygin-bar/images/team-portraits-alex-tone-v4.jpg" alt="Алексей Григорьев — партнёр проекта" width={1584} height={993} loading="lazy"/>
             </div>
             <div className="founder-title"><h3>Алексей Григорьев</h3><span><strong>10+</strong>лет в индустрии</span></div>
-            <p>Алексей соединяет барную идею с точным расчётом. Большой опыт в крупнейших ресторанных холдингах Чувашской Республики помогает ему продумать работу бара целиком — от меню и бюджета до команды на площадке. Ему одинаково важны вкус напитка и то, как организовано всё вокруг.</p>
+            <p>Алексей работал в крупных ресторанных холдингах Чувашии. В нашем проекте он продумывает меню, бюджет и работу команды на площадке. Любит, когда всё готово вовремя, а хозяева вечера могут спокойно побыть с гостями.</p>
           </article>
           <article className="founder" data-reveal>
             <div className="founder-photo roman paired-portrait">
               <Image unoptimized src="/grigoryev-malygin-bar/images/team-portraits-diptych-v3.jpg" alt="Роман Малыгин — партнёр проекта" width={1586} height={992} loading="lazy"/>
             </div>
             <div className="founder-title"><h3>Роман Малыгин</h3><span><strong>10+</strong>лет в индустрии</span></div>
-            <p>Роман умеет заинтересовать напитком ещё до первого глотка. Он разрабатывал барные карты и работал в крупных ресторанных проектах — за лёгкостью общения у него стоит большой профессиональный опыт, в том числе в обслуживании мероприятий и кейтеринге. С ним легко выбрать напиток под настроение и решиться на новое сочетание.</p>
+            <p>Роман составлял барные карты, работал в ресторанных проектах и на выездных мероприятиях. Любит знакомиться с гостями и подбирать напитки по их вкусам. Если пока не знаете, что заказать, — поговорите с ним.</p>
           </article>
         </div>
       </div>
@@ -344,12 +344,12 @@ export default function BarLanding() {
     <section className="how wrap section" id="how" aria-labelledby="how-title">
       <div className="section-top"><p className="eyebrow dark-label"><span className="section-number">04</span> КАК ЗАКАЗАТЬ</p></div>
       <div className="how-grid">
-        <div data-reveal><h2 id="how-title">Хороший вечер<br/>начинается<br/>с разговора.</h2><p className="how-intro">Можно прийти с готовым заданием или пока только с датой и идеей.</p></div>
+        <div data-reveal><h2 id="how-title">Хороший вечер<br/>начинается<br/>с разговора</h2><p className="how-intro">Можно написать нам с готовым планом или пока только с датой. Остальное обсудим вместе.</p></div>
         <div className="how-content">
           <ol className="steps">
-            <li data-reveal><span>01</span><div><h3>Расскажите о событии</h3><p>Дата, площадка, число гостей. Любимые напитки и пожелания к бару.</p></div></li>
-            <li data-reveal><span>02</span><div><h3>Выберем меню и подачу</h3><p>Согласуем формат, время работы и стоимость. Соберём предложение под ваше мероприятие.</p></div></li>
-            <li data-reveal><span>03</span><div><h3>Увидимся на площадке</h3><p>Подготовим бар к согласованному времени и возьмём обслуживание гостей на себя.</p></div></li>
+            <li data-reveal><span>01</span><div><h3>Расскажите о событии</h3><p>Напишите, когда и где собираетесь, сколько будет гостей и что вы любите пить.</p></div></li>
+            <li data-reveal><span>02</span><div><h3>Выберем меню и подачу</h3><p>Предложим напитки, выберем посуду и договоримся о времени и стоимости.</p></div></li>
+            <li data-reveal><span>03</span><div><h3>Увидимся на площадке</h3><p>Приедем, подготовим бар и будем готовить напитки. А вы — встречайте гостей.</p></div></li>
           </ol>
           <Accordion className="faq">
             {faqs.map(faq => <AccordionItem key={faq.id} value={faq.id}>

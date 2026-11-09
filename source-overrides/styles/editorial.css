@@ -227,11 +227,11 @@
  .hero-bottom p{font-size:13px;max-width:180px;line-height:1.6}
  .hero-bottom p br{display:none}
  .bar-site .hero-action{margin:0;font-size:11px;padding:10px 12px;min-height:44px;gap:10px;flex-shrink:0}
- .hero-stage{margin-top:10px;aspect-ratio:1/1.03;padding-left:12%;margin-right:0;width:100%;flex-shrink:0;align-self:stretch}
+ .hero-stage{margin-top:10px;aspect-ratio:1/1.03;padding-left:0;margin-right:0;width:100%;flex-shrink:0;align-self:stretch}
  .hero-still{width:33%;border-width:5px;left:0;bottom:-3%;border-radius:22px}
  .hero-video-plane{transform:translate3d(0,calc(var(--depth-y,0px)*.3),0)}
  .hero-still{transform:translate3d(0,calc(var(--depth-y,0px)*.25),0) rotate(-6deg)}
- .hero-caption{bottom:-30px;font-size:8px}
+ .hero-caption{display:none}
  .hero-media{border-radius:25px}
  .gallery-heading{grid-template-columns:1fr;gap:24px}
  .bar-site .section h2{font-size:clamp(44px,11vw,66px)}

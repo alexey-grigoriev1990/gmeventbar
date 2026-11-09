@@ -32,7 +32,7 @@ export function ContactSection({rootHref = './', topHref = '#home', message = '�
         <div className="contact-grid">
           <div className="contact-title"><h2 className="paired-heading"><span className="heading-line">ВАШЕ СОБЫТИЕ</span><span className="section-script">наш бар</span></h2></div>
           <div className="contact-info">
-            <p>Расскажите, что планируете.<br/>Обсудим бар и подготовим предложение.</p>
+            <p>Расскажите, что планируете.<br/>Поможем выбрать напитки и всё рассчитать.</p>
             <div className="contact-phones">
               <PhoneContact phone={phone} label="+7 919 656-45-24" message={message}/>
               <PhoneContact phone="+79176636484" label="+7 917 663-64-84" message={message}/>

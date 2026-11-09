@@ -40,7 +40,7 @@ export function SiteHeader({ rootHref = './', currentSlug }: { rootHref?: string
           </a>)}
         </nav>
         <nav className="menu-secondary" aria-label="Разделы сайта">
-          <a href={`${rootHref}#presentation`} onClick={() => setOpen(false)}>Подача</a>
+          <a href={`${rootHref}#presentation`} onClick={() => setOpen(false)}>Коктейльная карта</a>
           <a href={`${rootHref}#team`} onClick={() => setOpen(false)}>Команда</a>
           <a href={contactHref} onClick={() => setOpen(false)}>Контакты</a>
         </nav>
